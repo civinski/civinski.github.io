@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="theme-color" content="#2c8f88">
     <title>Gabriel Civinski</title>
-    <link rel="icon" href="img/avatar2.png">
+    <!-- <link rel="icon" href="img/avatar2.png"> -->
 
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/mdb.css">
@@ -350,8 +350,34 @@
 
 </head>
 
-<body id="page-top">
+<body onLoad="setFavIcons()" id="page-top">
+    <script>
 
+        function setFavIcons(){
+            var images = ['img/avatar1.png', 'img/avatar2.png', 'img/avatar3.png', 'img/avatar4.png',
+            'img/avatar5.png',
+            'img/avatar6.png',
+            'img/avatar7.png', 'img/avatar8.png', 'img/avatar9.png', 'img/avatar10.png'
+        ];
+        var size = images.length
+        var x = Math.floor(size * Math.random())
+        changeFavicon(images[x])
+        }
+
+        document.head = document.head || document.getElementsByTagName('head')[0];
+
+        function changeFavicon(src) {
+         var link = document.createElement('link'),
+             oldLink = document.getElementById('dynamic-favicon');
+         link.id = 'dynamic-favicon';
+         link.rel = 'shortcut icon';
+         link.href = src;
+         if (oldLink) {
+          document.head.removeChild(oldLink);
+         }
+         document.head.appendChild(link);
+        }
+        </script>
     <!-- Sidebar Holder -->
     <nav class="nav" id="sidebar">
         <div class="sidebar-header">
@@ -613,7 +639,7 @@
                                         </p>
                                     </div>
                                     <div class="card-footer">
-                                        <a href="https://github.com/civinski/crono" target="blank">Visitar (GitHub)</i>
+                                        <a href="https://github.com/civinski/crono" target="blank">Visitar (GitHub)
                                         </a>
                                     </div>
                                 </div>
@@ -640,7 +666,7 @@
                                     <div class="card-footer">
                                         <a href="http://comodoro.unifebe.edu.br/site/wp-content/uploads/2017/04/Anais-completo-PDF-ENPEX.pdf" target="blank">Visitar (Anais Enpex 2017)</a>
                                         <br>
-                                        <a href="http://www.furb.br/_upl/files/especiais/fiepe/Pesquisa.pdf?20180329163430" target="blank">Visitar (Anais VI FIEPE, pg. 11)</i>
+                                        <a href="http://www.furb.br/_upl/files/especiais/fiepe/Pesquisa.pdf?20180329163430" target="blank">Visitar (Anais VI FIEPE, pg. 11)
                                             <br>
                                         </a>
                                         <a href="https://siaiap32.univali.br/seer/index.php/acotb/article/view/12857" target="blank">Visitar (Anais COTB 2018)</a>
